@@ -1,0 +1,27 @@
+{% extends "base_home.html" %}
+{% block title %}Emilia World{% endblock %}
+
+{% block content %}
+<div class="box">
+    <div class="form-box">
+        <form action="#" method="post">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Repeat password" name="rpassword" required>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for m in messages %}
+                        <P style="color: red">{{m}}</P>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <button type="submit">Sign Up</button>
+        </form>
+        <hr>
+        <div class="create-btn">
+            <a href="{{ '/' }}">Log In here!</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
